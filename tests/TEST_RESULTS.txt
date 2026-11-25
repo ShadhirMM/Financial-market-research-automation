@@ -1,0 +1,73 @@
+2026-11-25 19:39:34 ERROR   market_research.ops Status webhook failed: down
+ERROR    market_research.ops:ops.py:87 Status webhook failed: down
+PASSED tests/test_config_http.py::test_default_config_loads
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[requests_per_second = 2-requests_per_second = 50-at most 5]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[history_days = 800-history_days = 100-at least 400]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[source = "fred"-source = "yahoo"-source must be]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[change = "pct"-change = "log"-change must be]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[window = "1W"-window = "2W"-window must be]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[watch = 25\nalert = 35-watch = 25\nalert = 15-beyond the watch]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected["2 Yr", "3 Yr"-"3 Yr"-2 Yr]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[series = "VIXCLS"-series = "NOPE"-unknown series]
+PASSED tests/test_config_http.py::test_bad_config_is_rejected[id = "NASDAQCOM"-id = "SP500"-unique]
+PASSED tests/test_config_http.py::test_missing_and_invalid_toml
+PASSED tests/test_config_http.py::test_secrets_come_from_environment
+PASSED tests/test_config_http.py::test_retries_temporary_errors_then_succeeds
+PASSED tests/test_config_http.py::test_honours_retry_after_and_retries_network_errors
+PASSED tests/test_config_http.py::test_gives_up_after_max_retries
+PASSED tests/test_config_http.py::test_permanent_errors_are_not_retried[400]
+PASSED tests/test_config_http.py::test_permanent_errors_are_not_retried[403]
+PASSED tests/test_config_http.py::test_permanent_errors_are_not_retried[404]
+PASSED tests/test_config_http.py::test_html_bot_page_with_status_200_is_an_error
+PASSED tests/test_config_http.py::test_rate_limit_is_per_host
+PASSED tests/test_config_http.py::test_raw_names_ignore_dates_so_rebuild_finds_the_file
+PASSED tests/test_config_http.py::test_replay_session
+PASSED tests/test_config_http.py::test_public_sample_config_is_in_sync_and_has_no_restricted_series
+PASSED tests/test_end_to_end.py::test_demo_end_to_end
+PASSED tests/test_end_to_end.py::test_live_style_run_then_rebuild_gives_identical_numbers
+PASSED tests/test_end_to_end.py::test_one_source_failing_does_not_stop_the_others[failures0-ECB FX-lost0]
+PASSED tests/test_end_to_end.py::test_one_source_failing_does_not_stop_the_others[failures1-FRED VIXCLS-lost1]
+PASSED tests/test_end_to_end.py::test_one_source_failing_does_not_stop_the_others[failures2-Treasury 2026-lost2]
+PASSED tests/test_end_to_end.py::test_unexpected_format_is_caught
+PASSED tests/test_end_to_end.py::test_nothing_collected_never_replaces_latest
+PASSED tests/test_end_to_end.py::test_ai_summary_off_by_default_added_when_enabled_rejected_when_invented
+PASSED tests/test_end_to_end.py::test_bad_config_and_missing_raw_folder_exit_2
+PASSED tests/test_end_to_end.py::test_lock
+PASSED tests/test_end_to_end.py::test_webhook
+PASSED tests/test_end_to_end.py::test_prune
+PASSED tests/test_sources_analytics.py::test_fred_parser_handles_blank_and_dot_missing_values_and_bom
+PASSED tests/test_sources_analytics.py::test_fred_parser_rejects_wrong_series_or_shape
+PASSED tests/test_sources_analytics.py::test_treasury_parser_matches_columns_by_name
+PASSED tests/test_sources_analytics.py::test_ecb_parser_and_usd_crosses_hand_computed
+PASSED tests/test_sources_analytics.py::test_clean_keeps_last_duplicate_drops_missing_and_out_of_range
+PASSED tests/test_sources_analytics.py::test_month_arithmetic_and_windows
+PASSED tests/test_sources_analytics.py::test_business_days_between
+PASSED tests/test_sources_analytics.py::test_as_of_uses_last_observation_on_or_before
+PASSED tests/test_sources_analytics.py::test_changes_pct_and_bps
+PASSED tests/test_sources_analytics.py::test_volatility_matches_hand_calculation
+PASSED tests/test_sources_analytics.py::test_max_drawdown_hand_computed
+PASSED tests/test_sources_analytics.py::test_summarise_row
+PASSED tests/test_sources_analytics.py::test_curve_snapshot_today_1m_1y_and_2s10s
+PASSED tests/test_validate_checks_ai.py::test_clean_series_has_no_findings
+PASSED tests/test_validate_checks_ai.py::test_each_series_rule
+PASSED tests/test_validate_checks_ai.py::test_bps_jumps_and_per_series_staleness
+PASSED tests/test_validate_checks_ai.py::test_curve_rules
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check0-WATCH]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check1-ALERT]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check2-OK]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check3-WATCH]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check4-OK]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check5-WATCH]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check6-OK]
+PASSED tests/test_validate_checks_ai.py::test_check_levels[check7-WATCH]
+PASSED tests/test_validate_checks_ai.py::test_check_explanations_and_units
+PASSED tests/test_validate_checks_ai.py::test_curve_check_and_not_evaluated_cases
+PASSED tests/test_validate_checks_ai.py::test_signals_sorted_alert_first
+PASSED tests/test_validate_checks_ai.py::test_facts_text_lists_rounded_figures
+PASSED tests/test_validate_checks_ai.py::test_number_check_accepts_only_numbers_from_the_facts
+PASSED tests/test_validate_checks_ai.py::test_summarise_request_shape_and_success
+PASSED tests/test_validate_checks_ai.py::test_summarise_rejections[{"headline": "Up 9.9%", "points": []}-end_turn-not in the facts]
+PASSED tests/test_validate_checks_ai.py::test_summarise_rejections[not json-end_turn-not valid JSON]
+PASSED tests/test_validate_checks_ai.py::test_summarise_rejections[-refusal-stop_reason=refusal]
+PASSED tests/test_validate_checks_ai.py::test_summarise_rejections[{"headline": "x"-max_tokens-stop_reason=max_tokens]
+70 passed in 48.63s
